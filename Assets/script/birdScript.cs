@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class birdScript : MonoBehaviour
 {
@@ -20,5 +21,12 @@ public class birdScript : MonoBehaviour
         rb.velocity = Vector3.zero;
         rb.AddForce(Vector2.up * _force);
 
+    }
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "enviroment")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }

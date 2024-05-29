@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class moving : MonoBehaviour
@@ -9,10 +8,6 @@ public class moving : MonoBehaviour
     void Update()
     {
         this.transform.position -= Vector3.right * _speed * Time.deltaTime;
-        if(this.transform.position.x < _xbound)
-        {
-            Destroy(this.gameObject);
-        }
         
     }
 }
